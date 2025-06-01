@@ -1,0 +1,206 @@
+.card {
+  width: 40rem;
+  height: 20rem;
+  border: 1px solid #000;
+  border-radius: 8px;
+  margin: 5rem auto; /* Center the card horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.TimerBox{
+  width: 28rem;
+  height: auto;
+  border: 2px,solid,#000;
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items:center;
+}
+.hourBox{
+    width: 100px;
+    height: 50px;
+    border: 2px,solid,#000;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.time{
+   font-size: 2rem;
+}
+/* Banner Sction */
+.img-banner{
+  position: relative;
+}
+.content{
+  position: absolute;
+  top: 0;
+  left:100px;
+  z-index: 999;
+   width: 200px;
+   height: 100%;
+  overflow-y: hidden;
+}
+.content h3{
+  color: #fff;
+ 
+}
+
+/* End Banner Section */
+.box{
+  display: flex;
+  margin: 10px;
+  gap: 20px;
+}
+.button{
+  width: 120px;
+  height: 50px;
+  border: 2px,solid,#000;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.star{
+  margin: 10px;
+  font-size: 70px;
+}
+
+button{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.button {
+  width: 100px;
+  padding: 8px;
+  border-radius: 5px;
+  outline: none;
+  background-color: darkgrey;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.Modal {
+  /* min-width: 550px; */
+  box-shadow: 0 0 15px -10px #2d3748;
+  padding: 35px 10px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.Form__feild {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 20px;
+  padding: 10px;
+}
+.Form__feild > input {
+  width: 320px;
+  height: 44px;
+  border-radius: 5px;
+  outline: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 2px solid black;
+}
+.heading {
+  display: flex;
+  justify-content: space-around;
+}
+.Crossbtn {
+  cursor: pointer;
+}
+.modal-content {
+  position: absolute;
+  width: 100vh;
+  height: 100vh;
+}
+
+.otpCopy{
+  width: 50px;
+  border: 2px solid black;
+  outline: none;
+  padding: 10px;
+  border-radius: 4px;
+  margin-right: 5px;
+  margin-top: 30px;
+}
+
+.multi__Select {
+
+ 
+  position: relative;
+}
+.Search__item{
+  width: 100%;
+  padding-left: 15px;
+  border: 2px solid black;
+  border-radius: 75px;
+  outline: none;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.Search__item > input{
+  padding-left: 2px;
+  border: none;
+  border-radius: 75px;
+  outline: none;
+  margin: 20px;
+ 
+}
+.Show__Suggetion{
+  width: 300px;
+  box-shadow: 0px 0px 15px -10px #2d3748;
+  padding: 10px;
+  margin: 25px;
+  height: 250px;
+  overflow-y: scroll;
+}
+
+.List__user >li {
+  
+  padding: 8px;
+  margin: 5px;
+}
+
+.List__user >li:hover {
+  background-color: aqua;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.25s;
+
+}
+.Pill__Box{
+  background-color: darkcyan;
+  width: 100px;
+  padding: 8px;
+  border-radius: 2px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+ 
+
+}
+.Pill__Box > h1{
+  color: white;
+
+}
