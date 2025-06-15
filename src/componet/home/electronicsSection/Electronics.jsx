@@ -1,9 +1,10 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 import { Container, Button, Row, Col, Card } from "react-bootstrap";
-
+import watch from "../../../asset/img/watch.jpg";
+import sound from "../../../asset/img/sound.jpg";
 const Electronics = () => {
-     const electronics = [
+  const electronics = [
     {
       id: 1,
       title: "Samsung Galaxy S24 5G",
@@ -49,84 +50,81 @@ const Electronics = () => {
       title: "Vivo T4x 5G",
       prices: "From ₹14,999",
       imgSrc:
-      "https://www.oppo.com/content/dam/oppo-campaign-site/in/events/oppo-product/image-link/march-2023/K12x_5G_Breeze_Blue_1200X200.png",
+        "https://www.oppo.com/content/dam/oppo-campaign-site/in/events/oppo-product/image-link/march-2023/K12x_5G_Breeze_Blue_1200X200.png",
     },
     {
       id: 4,
       title: "Vivo T4x 5G",
       prices: "From ₹14,999",
       imgSrc:
-      "https://www.oppo.com/content/dam/oppo-campaign-site/in/events/oppo-product/image-link/march-2023/K12x_5G_Breeze_Blue_1200X200.png",
+        "https://www.oppo.com/content/dam/oppo-campaign-site/in/events/oppo-product/image-link/march-2023/K12x_5G_Breeze_Blue_1200X200.png",
     },
   ];
   return (
     <div>
-        {/*  Best of Electronics Category */}
-              <Row className="pb-3">
-                <Col lg={12} className="pb-1">
-                  <div className="category-title">
-                    <h6>Best of Electronics</h6>
-                  </div>
-                </Col>
-                <Col lg={8}>
-                  <div className="category-grid">
-                    {electronics.map((electronic) => (
-                      <div key={electronic.id} className="category-card">
-                        <Link>
-                        <div className="card-body">
-                          <div className="category-img">
-                            <img
-                              src={electronic.imgSrc}
-                              alt={electronic.title}
-                            />
-                          </div>
-                          <div className="category-description">
-                            <h4>{electronic.title}</h4>
-                            <p className="mb-0 lh-xs">{electronic.prices}</p>
-                          </div>
-                        </div>
-                        </Link>
-                      </div>
-                    ))}
-                  </div>
-                </Col>
-                <Col lg={4}>
-                  <div className="racker-image-group">
-                    <div className="racker-image">
-                      <Row>
-                        <Col lg={12}>
-                          <div className="">
-                            <Link>
-                              <img
-                                className="img-fluid"
-                                src="https://www.reliancedigital.in/medias/boAT-Rockers-410-Bluetooth-Headphones-491598555-i-1?context=bWFzdGVyfGltYWdlc3w2NzczNnxpbWFnZS9qcGVnfGltYWdlcy9oZGIvaDQxLzkzMjE4Nzg1NTI2MDYuanBnfGJjMzk0MzhmODkzZWFlYmY2ZGNmYjdhZTAzMDMxYmZhMjJhNmM3YmVkMDE0MDc2ZjQyNDY2NzE4ZWNhN2MwMGQ"
-                                alt=""
-                              />
-                            </Link>
-                          </div>
-                        </Col>
-                        <Col lg={6}>
-                          <div className="">
-                            <img
-                              className="img-fluid"
-                              src="https://sustainhealth.fit/wp-content/uploads/2023/04/apple-watch-ultra-14-os9.jpeg"
-                              alt=""
-                            />
-                          </div>
-                        </Col>
-                        <Col lg={6}>
-                          <div className="">
-                            <img src="" alt="" />
-                          </div>
-                        </Col>
-                      </Row>
+      {/*  Best of Electronics Category */}
+      <Row className="pb-3">
+        <Col lg={12} className="pb-1">
+          <div className="category-title">
+            <h2>Best Deals on Smartphones</h2>
+          </div>
+        </Col>
+        <Col lg={8}>
+          <div className="category-grid">
+            {electronics.map((electronic) => (
+              <div key={electronic.id} className="category-card">
+                <Link>
+                  <div className="p-0 card-body">
+                    <div className="category-img">
+                      <img src={electronic.imgSrc} alt={electronic.title} />
                     </div>
+                    <div className="category-description">
+                      <h4>{electronic.title}</h4>
+                      <p className="mb-0 lh-xs">{electronic.prices}</p>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </Col>
+        <Col lg={4}>
+          <div className="racker-image-group">
+            <div className="racker-image">
+              <Row>
+                <Col lg={12}>
+                  <div className="">
+                    <Link>
+                      <img
+                        className="img-fluid"
+                        src="https://www.reliancedigital.in/medias/boAT-Rockers-410-Bluetooth-Headphones-491598555-i-1?context=bWFzdGVyfGltYWdlc3w2NzczNnxpbWFnZS9qcGVnfGltYWdlcy9oZGIvaDQxLzkzMjE4Nzg1NTI2MDYuanBnfGJjMzk0MzhmODkzZWFlYmY2ZGNmYjdhZTAzMDMxYmZhMjJhNmM3YmVkMDE0MDc2ZjQyNDY2NzE4ZWNhN2MwMGQ"
+                        alt=""
+                      />
+                    </Link>
+                  </div>
+                </Col>
+                <Col lg={6} className="pe-0">
+                  <div className="">
+                    <img
+                      className="img-fluid"
+                      src={sound}
+                      alt=""
+                    />
+                  </div>
+                </Col>
+                <Col lg={6} className="ps-0">
+                  <div className="">
+                    <img src={watch} alt="" />
                   </div>
                 </Col>
               </Row>
-              {/*  End Best of Electronics Category */}
+            </div>
+          </div>
+        </Col>
+      </Row>
+      {/*  End Best of Electronics Category */}
     </div>
-  )
-}
+  );
+};
 
-export default Electronics
+export default Electronics;

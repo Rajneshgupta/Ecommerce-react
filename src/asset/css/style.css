@@ -1,10 +1,5 @@
 @charset "UTF-8";
-/*!
-Theme Name: Sandbox - Modern & Multipurpose Bootstrap 5 Template
-Theme URI:	https://sandbox.elemisthemes.com/
-Version:	3.4.0
-Author:		elemis
-*/
+
 @import url(https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700);
 
 :root,
@@ -796,12 +791,20 @@ progress {
     color: var(--es-secondary-color)
 }
 
+.fw-semibold {
+    font-weight: 600 !important;
+}
+
 .w-25 {
     width: 22.5rem !important
 }
 
 .w-50 {
     width: 50% !important
+}
+
+.w-60 {
+    width: 60% !important
 }
 
 .w-75 {
@@ -3770,7 +3773,7 @@ progress {
 
 .text-success {
     --es-text-opacity: 1;
-    color: #45c4a0 !important
+    color: rgb(0, 158, 0) !important
 }
 
 .text-info {
@@ -4084,10 +4087,26 @@ progress {
 
 .btn-primary {
     color: #fff !important;
-    border-color: #c40873 !important;
-    background-color: #c40873 !important;
+    border-color: #ff0057 !important;
+    background-color: #ff0057 !important;
     font-size: 15px !important;
     font-weight: 500 !important;
+}
+
+.btn-check:active+.btn-primary:focus,
+.btn-check:checked+.btn-primary:focus,
+.btn-primary.active:focus,
+.btn-primary:active:focus,
+.show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 .25rem rgb(255 0 87 / 52%) !important;
+}
+
+.btn-check:focus+.btn-primary,
+.btn-primary:focus {
+    color: #fff;
+    background-color: #ff0057;
+    border-color: #ff0057;
+    box-shadow: 0 0 0 .25rem rgb(255 0 87 / 52%) !important;
 }
 
 .product-card {
@@ -4120,10 +4139,10 @@ progress {
     position: absolute;
     bottom: 20px;
     left: 10px;
-    background: rgb(235 235 235 / 94%);
-    color: #101010e0;
-    padding: 4px 9px;
-    font-size: 12px;
+    background: #388e3c;
+    color: #ffffffe0;
+    padding: 4px 5px;
+    font-size: 13px;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -4193,11 +4212,11 @@ progress {
 }
 
 .product-info {
-    padding: 10px;
+    padding: 15px;
 }
 
 .product-info h3 {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 5px;
 }
 
@@ -4214,19 +4233,21 @@ progress {
 
 .discount-price {
     color: #424242;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 700;
 }
 
 .original-price {
     text-decoration: line-through;
     color: #888;
     font-size: 13px;
+      font-weight: 600; 
 }
 
 .off-prices {
-    color: #b15454;
-    font-size: 12px;
+    color: #f93232;
+    font-size: 13px;
+    font-weight: 600;
 }
 
 .card-bg {
@@ -4248,7 +4269,7 @@ progress {
     border-radius: 4px;
     box-shadow: 0 10px 6px rgb(147 147 147 / 10%);
     transition: transform 0.3s ease;
-    padding: 12px;
+    padding: 10px;
     text-align: center;
 }
 
@@ -4260,7 +4281,7 @@ progress {
     width: 100%;
     height: 150px;
     object-fit: contain;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .category-description h4 {
@@ -4590,15 +4611,29 @@ progress {
 
 
 .scroll-btn {
-    position: absolute;
-    bottom: 50px;
-    right: 35px;
-    height: 45px;
-    width: 45px;
-    color: #fff;
-    border: 2px solid #ff5f6d;
-    background-color: #ff5f6d;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    height: 38px;
+    width: 40px;
+    background-color: #ff0057;
+    color: white;
+    border: none;
     border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease;
+}
+
+.scroll-btn {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-btn.hide {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .search-bar-container {
@@ -4791,6 +4826,9 @@ progress {
     display: flex;
     align-items: center;
 }
+.items-info{
+    display: block !important;
+}
 
 .product-image {
     width: 60px;
@@ -4851,8 +4889,9 @@ progress {
     justify-content: center;
 }
 
-.wishlistcard-removeIcon i {
-    font-size: 14px;
+.wishlistcard-removeIcon svg {
+    font-size: 16px !important;
+    font-weight: 600;
     color: #333;
     /* optional: change color if needed */
 }
@@ -4902,18 +4941,17 @@ progress {
     gap: 0.7rem;
     text-align: center;
     align-items: stretch;
-    /* Cards align by height, but can grow independently */
     min-width: 1000px;
-    /* Make sure horizontal scroll works */
 }
 
 .category-item {
-    background: #f1eded;
+    background: #f7f7f7;
     padding: 0.6rem;
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
 }
 
 .category-icon img {
@@ -4926,21 +4964,74 @@ progress {
     margin-top: 0.5rem;
     font-size: 14px;
     line-height: 1.2;
+    font-weight: 600;
+    color: #000000;
 }
 
-.lasted-product-card{
+.lasted-product-card {
     border: 1px solid #dfdfdf;
     border-radius: 2px;
     padding: 12px;
     text-align: center;
 }
-.lasted-product-card-body h6{
+
+.lasted-product-card-body h6 {
     font-size: 14px;
     font-weight: 400;
     line-height: 23px;
     margin: 7px 0 0px;
 }
-.lasted-product-card-body p{
+
+.lasted-product-card-body p {
     font-size: 14px;
     font-weight: 500;
+}
+
+.card-text:last-child {
+    margin-bottom: 15px !important;
+}
+
+.increase-items {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    padding: 0;
+    font-size: 17px;
+    line-height: 1;
+    color: #ff0057 !important;
+    border-color: #ff0057 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.increase-items:focus,
+.increase-items:active {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.increase-items:hover {
+    background: #fff !important;
+}
+
+.item-quantity {
+    border: 1px solid #af2453;
+    padding: 0px 13px;
+    font-weight: 600;
+}
+
+.overflow-items {
+    height: 85vh;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.overflow-items::-webkit-scrollbar {
+    width: 0px;
+}
+.total-list{
+   border-top: 1px dashed #e0e0e0;
 }

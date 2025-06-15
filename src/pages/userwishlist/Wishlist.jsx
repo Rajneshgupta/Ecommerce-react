@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import Layout from "../../componet/Layout";
+import CloseIcon from "@mui/icons-material/Close";
 
 const wishlistItems = [
   {
@@ -20,8 +21,8 @@ const wishlistItems = [
     discount: "Rs.200",
     priceoff: "15",
     image:
-    "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGxhcHRvcHxlbnwwfHwwfHx8MA%3D%3D",
-},
+      "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGxhcHRvcHxlbnwwfHwwfHx8MA%3D%3D",
+  },
   {
     id: 3,
     name: "Running Shoes",
@@ -46,11 +47,11 @@ function Wishlist() {
   return (
     <Layout>
       <section className="wishListarea">
-        <Container fluid className="py-5">
+        <Container fluid className="py-10">
           <Col lg={11} className="mx-auto">
-            <h6 className="mb-4">
+            <h2 className="mb-5">
               Your Wishlist <span className="fw-light">2 items</span>
-            </h6>
+            </h2>
             <Row>
               {wishlistItems.map((item) => (
                 <Col
@@ -70,10 +71,10 @@ function Wishlist() {
                         alt={item.name}
                       />
                       <div class="wishlistcard-removeIcon">
-                        <i class="fa-solid fa-xmark"></i>
+                        <CloseIcon />
                       </div>
-                      <Card.Body className="d-flex flex-column wishlistcard-itemaction p-3">
-                        <Card.Title className="wishlistdetails-label mb-2">
+                      <Card.Body className="p-3 d-flex flex-column wishlistcard-itemaction">
+                        <Card.Title className="mb-2 wishlistdetails-label">
                           {item.name}
                         </Card.Title>
                         <Card.Text className="itemdetails-itemPricing">
