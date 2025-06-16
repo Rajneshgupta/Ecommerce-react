@@ -27,7 +27,6 @@ function HomePage() {
                 </Row>
             </Container>
         </section>
-
     );
 }
 

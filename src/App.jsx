@@ -19,6 +19,9 @@ import Wishlist from './pages/userwishlist/Wishlist';
 import Cart from './pages/usercart/Cart';
 import Blogshow from './pages/Blogshow';
 import Home from './pages/home';
+import Login from './pages/login/Login';
+import Register from './pages/register/Register';
+import Forget from './pages/forget/Forget';
 
 function App() {
   return (
@@ -39,6 +42,9 @@ function App() {
             <Route path='profile' element={<Profile/>} />
             <Route path='wishlist' element={<Wishlist/>} />
             <Route path='cart' element={<Cart/>} />
+            <Route path='login' element={<Login/>} />
+            <Route path='register' element={<Register/>} />
+            <Route path='forget' element={<Forget/>} />
             <Route path='*' element={<Pagenotfound />} />
         </Routes>
       </BrowserRouter>

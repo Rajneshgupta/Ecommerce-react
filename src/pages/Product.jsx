@@ -62,7 +62,7 @@ function Product() {
 
   return (
     <Layout>
-      <section className="py-6 py-lg-12 py-md-9">
+      <section className="py-6 py-lg-12 py-md-9 bg-gray">
         <Container fluid className="">
           <Row>
             <Col lg={11} className="mx-auto">
