@@ -64,7 +64,7 @@ function Login() {
                   </Form>
 
                   <div className="mt-3 text-center">
-                    <small className="text-muted fs-18">
+                    <small className="fs-18 fw-semibold">
                       Don't have an account?{" "}
                       <Link to="/register" className="text-primary fw-semibold">
                         Sign Up

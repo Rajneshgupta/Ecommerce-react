@@ -1,149 +1,202 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../componet/Layout";
-import { Link } from 'react-router-dom';
-import Newslatter  from "../pages/newslatter/Newslatter";
-import '../pages/Blog.css';
-import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import Newslatter from "../pages/newslatter/Newslatter";
+import "../pages/Blog.css";
+import {
+  Container,
+  Row,
+  Col,
+  Card,
+  Button,
+  Form,
+  Pagination,
+  Badge,
+} from "react-bootstrap";
 
 const blogData = [
-    {
-        id: 1,
-        title: "The Ultimate Guide to Choosing the Right Handwash for Your Skin",
-        image: "https://www.cossmic.com/source/images/skincare/handwash/prod-ftc-img.jpg",
-        author: "Shivmohan Sharma",
-        date: "2 weeks ago",
-        description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,",
-    },
-    {
-        id: 2,
-        title: "The Ultimate Guide to Choosing the Right Handwash for Your Skin",
-        image: "https://www.cossmic.com/source/images/skincare/handwash/prod-ftc-img.jpg",
-        author: "Shivmohan Sharma",
-        date: "2 weeks ago",
-        description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,",
-    },
-    // Add more blog items here as needed
+  {
+    id: 1,
+    title: "Top 5 Laptops for Work and Play in 2025",
+    excerpt:
+      "We’ve tested dozens of laptops to bring you the best for productivity and entertainment.",
+    category: "Laptop",
+    image: "https://source.unsplash.com/600x400/?laptop,technology",
+    date: "June 15, 2025",
+  },
+  {
+    id: 2,
+    title: "Choosing the Right Desktop Setup for Your Home Office",
+    excerpt:
+      "From processors to monitors, learn how to choose the perfect desktop bundle for any budget.",
+    category: "Desktop",
+    image: "https://source.unsplash.com/600x400/?desktop,pc",
+    date: "June 10, 2025",
+  },
+  {
+    id: 3,
+    title: "2025 Mobile Buying Guide: Best Phones Under ₹50,000",
+    excerpt:
+      "Here’s our updated list of best smartphones that deliver premium features without breaking the bank.",
+    category: "Mobile",
+    image: "https://source.unsplash.com/600x400/?smartphone,mobile",
+    date: "June 8, 2025",
+  },
+  {
+    id: 4,
+    title: "Best Noise-Cancelling Headphones for Travel & Work",
+    excerpt:
+      "Compare top headphone brands for battery life, comfort, and noise isolation.",
+    category: "Headphone",
+    image: "https://source.unsplash.com/600x400/?headphone,sound",
+    date: "June 5, 2025",
+  },
+  {
+    id: 5,
+    title: "Top Bluetooth Speakers of 2025 for Every Budget",
+    excerpt:
+      "These compact powerhouses offer big sound for small spaces. Here are our top picks.",
+    category: "Speaker",
+    image: "https://source.unsplash.com/600x400/?speaker,music",
+    date: "June 2, 2025",
+  },
+  {
+    id: 6,
+    title: "Laptop vs Desktop: Which One Should You Buy?",
+    excerpt:
+      "Debating between portability and power? We break down the pros and cons of both.",
+    category: "Comparison",
+    image: "https://source.unsplash.com/600x400/?laptop,desktop,comparison",
+    date: "May 28, 2025",
+  },
 ];
 
+const categories = [
+  "All",
+  "Laptop",
+  "Desktop",
+  "Mobile",
+  "Headphone",
+  "Speaker",
+  "Comparison",
+];
+
+const itemsPerPage = 3;
+
 function Blog() {
-    return (
-        <Layout>
-            <section className="section-theme">
-                <Container>
-                  <Col lg={12}> 
-                      <div className="text-center pb-5">
-                        <h1> Our Blogs</h1>
-                      </div>
-                  </Col>
-                </Container>
-                <Container fluid>
-                    <Row>
-                        <Col lg={11} className="mx-auto">
-                            <Row>
-                                <Col lg={8} md={12} sm={12}>
-                                    <Row>
-                                        {blogData.map((blog) => (
-                                            <Col lg={4} key={blog.id}>
-                                                <div className="postbox__wrapper">
-                                                    <article className="postbox__item format-image transition-3">
-                                                        <div className="postbox-thumb">
-                                                            <Link to="/blogshow">
-                                                                <img src={blog.image} alt={blog.title} />
-                                                            </Link>
-                                                        </div>
-                                                        <div className="postbox-content">
-                                                            <div className="postbox-meta d-flex align-items-center gap-4 pb-3">
-                                                                <span>
-                                                                    <a href="#" className="d-flex align-items-center gap-1">
-                                                                        <svg width="13" height="14" viewBox="0 0 13 14" fill="none"
-                                                                            xmlns="http://www.w3.org/2000/svg">
-                                                                            <path
-                                                                                d="M11.6667 13V11.6667C11.6667 10.9594 11.3857 10.2811 10.8856 9.78105C10.3855 9.28095 9.70724 9 9 9H3.66667C2.95942 9 2.28115 9.28095 1.78105 9.78105C1.28095 10.2811 1 10.9594 1 11.6667V13"
-                                                                                stroke="currentColor" strokeWidth="2" strokeLinecap="round"
-                                                                                strokeLinejoin="round"></path>
-                                                                            <path
-                                                                                d="M6.33317 6.33333C7.80593 6.33333 8.99984 5.13943 8.99984 3.66667C8.99984 2.19391 7.80593 1 6.33317 1C4.86041 1 3.6665 2.19391 3.6665 3.66667C3.6665 5.13943 4.86041 6.33333 6.33317 6.33333Z"
-                                                                                stroke="currentColor" strokeWidth="2" strokeLinecap="round"
-                                                                                strokeLinejoin="round"></path>
-                                                                        </svg>
-                                                                        {blog.author}
-                                                                    </a>
-                                                                </span>
-                                                                <span className="d-flex align-items-center gap-1">
-                                                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path
-                                                                            d="M7.5 14C11.0899 14 14 11.0899 14 7.5C14 3.91015 11.0899 1 7.5 1C3.91015 1 1 3.91015 1 7.5C1 11.0899 3.91015 14 7.5 14Z"
-                                                                            stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                                                                        </path>
-                                                                        <path d="M7.5 3.59961V7.49961L10.1 8.79961" stroke="currentColor" strokeWidth="1.5"
-                                                                            strokeLinecap="round" strokeLinejoin="round"></path>
-                                                                    </svg>
-                                                                    {blog.date}
-                                                                </span>
-                                                            </div>
-                                                            <h4 className="postbox-title mb-3">
-                                                                <a href="#">{blog.title}</a>
-                                                            </h4>
-                                                            <div className="postbox-text">
-                                                                <p>{blog.description}</p>
-                                                            </div>
-                                                        </div>
-                                                    </article>
-                                                </div>
-                                            </Col>
-                                        ))}
-                                    </Row>
-                                </Col>
-                                <Col lg={4} md={12} sm={12}>
-                                    {/* Optional sidebar content */}
-                                    <div className="blog-sidebar-wrapper">
-                                      <div className="sidebar-widget mb-4">
-                                          <h4 className="blog-sidebar-title">Category</h4>
-                                          <div className="blog-sidebar-widget-content">
-                                              <ul className="ps-0">
-                                                  <li>
-                                                    <a href="">Psychology <span>1</span></a>
-                                                  </li>
-                                              </ul>
-                                          </div>
-                                      </div>
-                                      <div className="sidebar-widget mb-4">
-                                          <h4 className="blog-sidebar-title">Recent Post</h4>
-                                          <div className="sidebar-widget-content">
-                                              <div className="sidebar-post">
-                                                    <div className="resent-post d-flex gap-4">
-                                                        <div className="resent-post-thumb">
-                                                            <a href="">
-                                                                <img src="https://www.cossmic.com/source/images/skincare/handwash/prod-ftc-img.jpg" alt=""/>
-                                                            </a>
-                                                        </div>
-                                                        <div className="resent-post-content">
-                                                            <h3 className="resent-post-title lh-05">
-                                                                <a href="">From ClassNameroom to Career: Navi...</a>
-                                                            </h3>
-                                                            <div className="resent-post-meta">
-                                                                <span className="d-flex align-items-center gap-2">
-                                                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path d="M7.5 14C11.0899 14 14 11.0899 14 7.5C14 3.91015 11.0899 1 7.5 1C3.91015 1 1 3.91015 1 7.5C1 11.0899 3.91015 14 7.5 14Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                                        <path d="M7.5 3.59961V7.49961L10.1 8.79961" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                                    </svg>2 weeks ago
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                    </div>
-                                </Col>
-                            </Row>
-                        </Col>
-                    </Row>
-                </Container>
-            </section>
-            <Newslatter></Newslatter>
-        </Layout>
-    );
+  const [searchTerm, setSearchTerm] = useState("");
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const filteredBlogs = blogData.filter((post) => {
+    const matchesCategory =
+      activeCategory === "All" || post.category === activeCategory;
+    const matchesSearch =
+      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
+
+  const indexOfLast = currentPage * itemsPerPage;
+  const indexOfFirst = indexOfLast - itemsPerPage;
+  const currentBlogs = filteredBlogs.slice(indexOfFirst, indexOfLast);
+  const totalPages = Math.ceil(filteredBlogs.length / itemsPerPage);
+
+  return (
+    <Layout>
+      <section className="section-theme">
+        <Container>
+          <Col lg={12}>
+            <div className="pb-5 text-center">
+              <h1>Our Blogs</h1>
+            </div>
+          </Col>
+        </Container>
+      </section>
+
+      <section className="py-5 blog-section">
+        <Container>
+          <Row className="mb-4 align-items-center">
+            <Col md={6}>
+              <Form.Control
+                type="text"
+                placeholder="Search blogs..."
+                value={searchTerm}
+                onChange={(e) => {
+                  setSearchTerm(e.target.value);
+                  setCurrentPage(1);
+                }}
+              />
+            </Col>
+            <Col md={6} className="mt-2 text-md-end mt-md-0">
+              {categories.map((cat) => (
+                <Badge
+                  key={cat}
+                  pill
+                  bg={activeCategory === cat ? "primary" : "secondary"}
+                  className="mb-1 me-2 category-badge"
+                  style={{ cursor: "pointer" }}
+                  onClick={() => {
+                    setActiveCategory(cat);
+                    setCurrentPage(1);
+                  }}
+                >
+                  {cat}
+                </Badge>
+              ))}
+            </Col>
+          </Row>
+
+          <Row>
+            {currentBlogs.map((post) => (
+              <Col md={6} lg={4} className="mb-4" key={post.id}>
+                <Card className="blog-card h-100">
+                  <Card.Img
+                    variant="top"
+                    src={post.image}
+                    className="blog-img"
+                  />
+                  <Card.Body className="d-flex flex-column">
+                    <Card.Title>{post.title}</Card.Title>
+                    <Card.Text className="text-muted small">
+                      {post.date}
+                    </Card.Text>
+                    <Card.Text>{post.excerpt}</Card.Text>
+                    <div className="mt-auto d-flex justify-content-between align-items-center">
+                      <span className="text-muted small">{post.category}</span>
+                      <Link to={`/blog/${post.id}`}>
+                        <Button variant="outline-primary" size="sm">
+                          Read More
+                        </Button>
+                      </Link>
+                    </div>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+
+          {filteredBlogs.length > itemsPerPage && (
+            <div className="mt-4 d-flex justify-content-center">
+              <Pagination>
+                {[...Array(totalPages)].map((_, i) => (
+                  <Pagination.Item
+                    key={i + 1}
+                    active={i + 1 === currentPage}
+                    onClick={() => setCurrentPage(i + 1)}
+                  >
+                    {i + 1}
+                  </Pagination.Item>
+                ))}
+              </Pagination>
+            </div>
+          )}
+        </Container>
+      </section>
+
+      <Newslatter />
+    </Layout>
+  );
 }
 
 export default Blog;

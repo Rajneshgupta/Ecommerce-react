@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Row,Col,} from "react-bootstrap";
 import Layout from "../componet/Layout";
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 function Sitemap() {
   return (
@@ -12,15 +13,15 @@ function Sitemap() {
           <Row className="mb-5 justify-content-center">
             <Col lg={11} className="mx-auto">
               {/* Breadcrumb  */}
-              <nav className="breadcrumb-wrapper breadcrumb-nav d-flex align-items-center mb-2">
+              <nav className="mb-2 breadcrumb-wrapper breadcrumb-nav d-flex align-items-center">
                 <Link to="#">Home</Link>
-                <i className="fa-solid fa-angle-right mx-2"></i>
+                <ChevronRightIcon/>
                 <span className="active">Sitemap</span>
               </nav>
               {/* End Breadcrumb  */}
 
               {/* Search Bar  */}
-              <div className="d-flex justify-content-center pt-3 pb-5">
+              <div className="pt-3 pb-8 d-flex justify-content-center">
                 <div className="search-bar-container d-flex align-items-center">
                   <span className="search-start-icon">
                   <i className="fa-solid fa-magnifying-glass me-1"></i> 
@@ -42,7 +43,7 @@ function Sitemap() {
                 <Col lg={3} sm={6}>
                   <div className="sitemap-section">
                     <div className="sitemap-hedaing">
-                       <h6 className="sitemap-title">Electronics</h6>
+                       <h3 className="sitemap-title">Electronics</h3>
                     </div>
                     <ul className="sitemap-list">
                       <li>
@@ -67,7 +68,7 @@ function Sitemap() {
                 <Col lg={3} sm={6}>
                   <div className="sitemap-section">
                     <div className="sitemap-hedaing">
-                      <h6 className="sitemap-title">Fashion</h6>
+                      <h3 className="sitemap-title">Fashion</h3>
                     </div>
                     <ul className="sitemap-list">
                       <li>
@@ -92,7 +93,7 @@ function Sitemap() {
                 <Col lg={3} sm={6}>
                   <div className="sitemap-section">
                     <div className="sitemap-hedaing">
-                    <h6 className="sitemap-title">Home & Kitchen</h6>
+                    <h3 className="sitemap-title">Home & Kitchen</h3>
                     </div>
                     <ul className="sitemap-list">
                       <li>
@@ -117,7 +118,7 @@ function Sitemap() {
                 <Col lg={3} sm={6}>
                   <div className="sitemap-section">
                     <div className="sitemap-hedaing">
-                    <h6 className="sitemap-title">Customer Service</h6>
+                    <h3 className="sitemap-title">Customer Service</h3>
                     </div>
                     <ul className="sitemap-list">
                       <li>

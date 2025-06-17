@@ -4615,7 +4615,7 @@ progress {
 
 .sitemap-title {
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 1.8rem;
     color: #333;
 }
 
@@ -4626,7 +4626,7 @@ progress {
 }
 
 .sitemap-list li {
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.4rem;
 }
 
 .sitemap-list a {
@@ -5085,8 +5085,8 @@ progress {
 }
 
 .login-card {
-    padding: 50px 40px;
-    border-radius: 12px;
+    padding: 40px 40px;
+    border-radius: 0.4rem;
     background-color: #fff;
 }
 
@@ -5108,7 +5108,7 @@ progress {
 }
 
 .register-card {
-    padding: 50px 40px;
+    padding: 40px 40px;
     border-radius: 0.4rem;
     background-color: #fff;
 }
@@ -5134,7 +5134,7 @@ progress {
 }
 
 .forget-card {
-    padding: 2rem;
-    border-radius: 1rem;
+    padding: 40px 40px;
+    border-radius: 0.4rem;
     background-color: #fff;
 }

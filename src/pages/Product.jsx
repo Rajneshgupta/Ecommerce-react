@@ -208,6 +208,9 @@ function Product() {
 
                 <Col lg={9}>
                   <Row>
+                    
+                  </Row>
+                  <Row>
                     {products.map((product, index) => (
                       <Col lg={4} key={index} className="">
                         <div className="product-card">

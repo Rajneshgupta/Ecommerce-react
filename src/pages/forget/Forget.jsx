@@ -19,7 +19,7 @@ function Forget() {
           <Row className="justify-content-center">
             <Col xs={12} sm={10} md={8} lg={6}>
               <Card className="border-0 shadow-sm forget-card">
-                <Card.Body>
+                <Card.Body className="p-0">
                   <h2 className="mb-5 text-center">Forgot Password?</h2>
                   <p className="mb-4 text-center text-muted">
                     Enter your email address and we’ll send you a link to reset
